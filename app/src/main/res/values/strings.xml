@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Chuck Norris Facts</string>
+    <string name="main_title">Facts about\nChuck Norris</string>
+    <string name="main_or">OR</string>
+    <string name="main_random_bt_text">Try your lucky</string>
+    <string name="main_category_bt_text">Select a Category</string>
+</resources>
