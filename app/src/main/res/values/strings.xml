@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">Chuck Norris Facts</string>
+
+    <!-- MAIN ACTIVITY -->
     <string name="main_title">Facts about\nChuck Norris</string>
     <string name="main_or">OR</string>
     <string name="main_random_bt_text">Try your lucky</string>
     <string name="main_category_bt_text">Select a Category</string>
+    <string name="age_check_dialog_title">Silence, Chuck Norris is asking</string>
+    <string name="age_dialog_message">Are u under or over 18?</string>
+    <string name="warn_under_age_message">You are not allowed to hear the Chuck Norris bad words... First Grow up Kid</string>
+    <string name="age_dialog_negative_label">UNDER</string>
+    <string name="age_dialog_positive_label">OVER</string>
+    <string name="over_age_toast_message">UHUU</string>
+    <string name="category_dialog_title">Pick a Category\nBe careful with explicit</string>
+    <!-- END MAIN ACTIVITY -->
 </resources>

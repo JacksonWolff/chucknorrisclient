@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnStart
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jacksonwolff.chucknorris.R
 import com.jacksonwolff.chucknorris.data.api.ApiHelper
 import com.jacksonwolff.chucknorris.data.api.RetrofitBuilder
@@ -45,24 +44,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun promptAgeDialog(category: String) {
-        val builder = MaterialAlertDialogBuilder(this)
-        builder.setTitle("Silence, Chuck Norris is asking")
-        builder.setMessage("Are u under or over 18?")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.age_check_dialog_title))
+        builder.setMessage(getString(R.string.age_dialog_message))
 
-        builder.setNeutralButton("UNDER") { _, _ ->
+        builder.setNegativeButton(getString(R.string.age_dialog_negative_label)) { _, _ ->
             Toast.makeText(
                 applicationContext,
-                "You are not allowed to hear the Chuck Norris bad words... First Grow up Kid",
+                getString(R.string.warn_under_age_message),
                 Toast.LENGTH_LONG
             ).show()
         }
-        builder.setPositiveButton("OVER") { _, _ ->
+        builder.setPositiveButton(getString(R.string.age_dialog_positive_label)) { _, _ ->
 
-            setupCategoryFactObserver(category)
+
             Toast.makeText(
                 applicationContext,
-                "UHUU", Toast.LENGTH_SHORT
+                getString(R.string.over_age_toast_message), Toast.LENGTH_SHORT
             ).show()
+
+            setupCategoryFactObserver(category)
         }
 
         builder.create().show()
@@ -72,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     private fun createCategoriesDialog(categories: List<String>) {
         return let {
             val builder = AlertDialog.Builder(it)
-            builder.setTitle("Pick a Category\nBe careful with explicit")
+            builder.setTitle(getString(R.string.category_dialog_title))
                 .setItems(
                     categories.toTypedArray()
                 ) { _, which ->
